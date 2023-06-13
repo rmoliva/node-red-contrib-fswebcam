@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    RED.nodes.registerType('fswebcam',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+          name: { value: '' },
+          width: { value: 640, validate: RED.validators.number(), required: true },
+          height: { value: 480, validate: RED.validators.number(), required: true },
+          quality: { value: 100, validate: RED.validators.number(), required: true },
+          device: { value: '/dev/video0', required: true }
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"fswebcam";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="fswebcam">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-width"><i class="fa fa-tag"></i> Width</label>
+    <input type="text" id="node-input-width">
+  </div>
+  <div class="form-row">
+    <label for="node-input-height"><i class="fa fa-tag"></i> Height</label>
+    <input type="text" id="node-input-height">
+  </div>
+  <div class="form-row">
+    <label for="node-input-quality"><i class="fa fa-tag"></i> Quality</label>
+    <input type="text" id="node-input-quality">
+  </div>
+  <div class="form-row">
+    <label for="node-input-device"><i class="fa fa-tag"></i> Device</label>
+    <input type="text" id="node-input-device">
+  </div>
+</script>
+
+<script type="text/html" data-help-name="fswebcam">
+  <p>A simple node that gets an image from fswebcam and generates a buffer from it</p>
+  <h3>Outputs</h3>
+  <dl class="message-properties">
+    <dt>payload
+    <span class="property-type">buffer</span>
+    </dt>
+  </dl>
+</script>

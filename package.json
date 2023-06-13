@@ -1,0 +1,25 @@
+{
+  "name": "node-red-contrib-fswebcam",
+  "version": "0.0.1",
+  "description": "Node Red node for getting fswebcam data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red",
+    "nodered",
+    "fswebcam"
+  ],
+  "author": "Roberto M. Oliva",
+  "license": "MIT",
+  "node-red": {
+    "version": ">=3.0.0",
+    "nodes": {
+      "fswebcam": "fswebcam.js"
+    }
+  },
+  "dependencies": {
+    "node-webcam": "^0.8.2"
+  }
+}
